@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Briefcase, MapPin, Clock, ArrowRight } from "@/components/icons";
-import type { Job } from "@/data/jobs";
+import type { Job } from "@/lib/jobs";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 

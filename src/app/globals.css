@@ -51,7 +51,7 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 96px; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
@@ -163,6 +163,9 @@ p  { color: var(--body); }
 
 @media (max-width: 1000px) {
   .nav__toggle { display: inline-flex; }
+  /* backdrop-filter on .site-header would trap fixed-position children; drop it at mobile so the drawer anchors to the viewport */
+  .site-header { backdrop-filter: none; background: rgba(255, 255, 255, .98); }
+  .nav__actions { position: relative; z-index: 70; }
   .nav__menu {
     position: fixed; inset: 0 0 0 auto; width: min(82vw, 360px);
     flex-direction: column; align-items: stretch; gap: .25rem;
@@ -431,3 +434,7 @@ html[lang="ar"] body { line-height: 1.85; }
 .kv dd { font-weight: 500; color: var(--ink); word-break: break-word; }
 .kv a { color: var(--blue); }
 .admin-actions { display: grid; gap: .7rem; }
+.admin-nav { display: flex; gap: 1.25rem; margin-inline-start: auto; margin-inline-end: 1.25rem; }
+.admin-nav a { color: #C7D2E0; font-family: var(--font-display); font-weight: 600; font-size: .9rem; }
+.admin-nav a:hover { color: #fff; }
+.admin-head--row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }

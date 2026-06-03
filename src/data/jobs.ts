@@ -1,22 +1,7 @@
-import type { Locale } from "@/i18n/config";
+import type { Job } from "@/lib/jobs";
 
-type L<T> = Record<Locale, T>;
-
-export type Job = {
-  slug: string;
-  company: L<string>;
-  department: L<string>;
-  location: L<string>;
-  type: L<string>;
-  title: L<string>;
-  excerpt: L<string>;
-  description: L<string[]>;
-  responsibilities: L<string[]>;
-  requirements: L<string[]>;
-  posted: string; // ISO date
-};
-
-export const jobs: Job[] = [
+// Seed data used once to populate the `jobs` table. The app reads jobs from the DB.
+export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "software-engineer",
     company: { en: "Axon Group", ar: "مجموعة أكسون" },
@@ -324,11 +309,3 @@ export const jobs: Job[] = [
     posted: "2026-05-22",
   },
 ];
-
-export function getJob(slug: string): Job | undefined {
-  return jobs.find((j) => j.slug === slug);
-}
-
-export function departmentsFor(locale: Locale): string[] {
-  return Array.from(new Set(jobs.map((j) => j.department[locale])));
-}

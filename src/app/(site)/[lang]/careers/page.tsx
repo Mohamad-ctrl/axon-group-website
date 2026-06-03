@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import JobsExplorer from "@/components/careers/JobsExplorer";
-import { jobs, departmentsFor } from "@/data/jobs";
+import { getActiveJobs, departmentsFor } from "@/lib/jobs";
 import { ArrowRight, Growth, Users, Shield, Sparkle } from "@/components/icons";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -33,7 +35,8 @@ export default async function CareersPage({
   if (!isLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const c = dict.careers;
-  const departments = departmentsFor(lang);
+  const jobs = await getActiveJobs();
+  const departments = departmentsFor(lang, jobs);
 
   return (
     <>

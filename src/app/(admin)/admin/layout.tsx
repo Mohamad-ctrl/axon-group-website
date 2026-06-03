@@ -20,6 +20,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <header className="admin-topbar">
           <div className="admin-topbar__inner">
             <a href="/admin" className="admin-brand">Axon <span>Admin</span></a>
+            {authed && (
+              <nav className="admin-nav">
+                <a href="/admin">Applications</a>
+                <a href="/admin/jobs">Jobs</a>
+              </nav>
+            )}
             {authed && <LogoutButton />}
           </div>
         </header>

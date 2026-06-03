@@ -3,13 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
-import { jobs, getJob } from "@/data/jobs";
+import { getJobBySlug } from "@/lib/jobs";
 import ApplicationForm from "@/components/careers/ApplicationForm";
 import { Briefcase, MapPin, Clock } from "@/components/icons";
 
-export function generateStaticParams() {
-  return jobs.map((j) => ({ slug: j.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -19,7 +17,7 @@ export async function generateMetadata({
   const { lang, slug } = await params;
   const loc = isLocale(lang) ? lang : "en";
   const dict = getDictionary(loc);
-  const job = getJob(slug);
+  const job = await getJobBySlug(slug);
   if (!job) return { title: dict.careers.notFound };
   return {
     title: `${job.title[loc]} — ${job.company[loc]}`,
@@ -37,8 +35,8 @@ export default async function JobPage({
   if (!isLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const c = dict.careers;
-  const job = getJob(slug);
-  if (!job) notFound();
+  const job = await getJobBySlug(slug);
+  if (!job || !job.active) notFound();
 
   const postedLabel = new Date(job.posted).toLocaleDateString(
     lang === "ar" ? "ar-AE" : "en-GB",
