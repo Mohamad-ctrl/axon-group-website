@@ -90,6 +90,9 @@ export default function Header({
           />
 
           <nav className={`nav__menu${open ? " is-open" : ""}`} aria-label="Primary">
+            <button className="nav__close" onClick={() => setOpen(false)} aria-label={dict.closeMenu}>
+              <Close />
+            </button>
             {navLinks.map((l) => (
               <Link key={l.href} className="nav__link" href={l.href} onClick={() => setOpen(false)}>
                 {l.label}
