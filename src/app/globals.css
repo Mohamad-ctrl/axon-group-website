@@ -462,6 +462,11 @@ html[lang="ar"] body { line-height: 1.85; }
 .cv-card__actions .btn { padding: .5rem 1rem; }
 .cv-preview { width: 100%; height: 78vh; min-height: 480px; margin-top: 1.1rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--bg-alt); }
 .cv-card__note { margin-top: 1rem; }
+.admin-search { position: relative; max-width: 420px; margin-bottom: 1.25rem; }
+.admin-search svg { position: absolute; left: .85rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+.admin-search__input { width: 100%; font: inherit; color: var(--ink); padding: .7rem .9rem .7rem 2.5rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: #fff; transition: border-color var(--t-fast), box-shadow var(--t-fast); }
+.admin-search__input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(237,28,36,.12); }
+.admin-search__count { color: var(--muted); font-size: .85rem; margin-bottom: 1rem; }
 .admin-nav { display: flex; gap: 1.25rem; margin-inline-start: auto; margin-inline-end: 1.25rem; }
 .admin-nav a { color: #C7D2E0; font-family: var(--font-display); font-weight: 600; font-size: .9rem; }
 .admin-nav a:hover { color: #fff; }

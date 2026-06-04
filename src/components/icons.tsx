@@ -101,6 +101,13 @@ export const Growth = (p: P) => (
   </svg>
 );
 
+export const Search = (p: P) => (
+  <svg viewBox="0 0 24 24" {...stroke} {...p}>
+    <circle cx="11" cy="11" r="7" />
+    <path d="m21 21-4.35-4.35" />
+  </svg>
+);
+
 /* Social (filled) */
 export const Linkedin = (p: P) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>

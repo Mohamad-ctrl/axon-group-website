@@ -3,6 +3,7 @@ import Link from "next/link";
 import { isAuthenticated } from "@/lib/admin-auth";
 import { supabaseAdmin } from "@/lib/supabase";
 import { ALL_STAGES, STAGE_LABEL, type Stage } from "@/lib/stages";
+import ApplicationsTable from "./ApplicationsTable";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,15 @@ export default async function AdminDashboard({
   const counts: Record<string, number> = {};
   rows.forEach((r) => { counts[r.stage] = (counts[r.stage] || 0) + 1; });
   const filtered = stage && stage !== "all" ? rows.filter((r) => r.stage === stage) : rows;
+  const list = filtered.map((r) => ({
+    id: r.id,
+    name: `${r.first_name} ${r.last_name}`,
+    email: r.email,
+    role: r.job_title,
+    stage: r.stage,
+    applied: new Date(r.created_at).toLocaleDateString("en-GB"),
+  }));
+  const emptyMessage = `No applications${stage && stage !== "all" ? " in this stage" : " yet"}.`;
 
   return (
     <div className="admin-page">
@@ -54,28 +64,7 @@ export default async function AdminDashboard({
         ))}
       </div>
 
-      {filtered.length === 0 ? (
-        <p className="jobs__empty">No applications{stage && stage !== "all" ? " in this stage" : " yet"}.</p>
-      ) : (
-        <div className="admin-table">
-          <div className="admin-table__head">
-            <span>Applicant</span>
-            <span>Role</span>
-            <span>Stage</span>
-            <span>Applied</span>
-            <span></span>
-          </div>
-          {filtered.map((r) => (
-            <div className="admin-table__row" key={r.id}>
-              <span><b>{r.first_name} {r.last_name}</b><br /><span className="muted">{r.email}</span></span>
-              <span>{r.job_title}</span>
-              <span><span className={`stage-badge stage-badge--${r.stage}`}>{STAGE_LABEL[r.stage]}</span></span>
-              <span className="muted">{new Date(r.created_at).toLocaleDateString("en-GB")}</span>
-              <span><Link className="btn btn--ghost" href={`/admin/${r.id}`} style={{ padding: ".4rem .9rem" }}>View</Link></span>
-            </div>
-          ))}
-        </div>
-      )}
+      <ApplicationsTable rows={list} emptyMessage={emptyMessage} />
     </div>
   );
 }
