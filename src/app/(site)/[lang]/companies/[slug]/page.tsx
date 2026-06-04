@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { companyMeta } from "@/data/companies";
+import { companyCertificates, CERT_META } from "@/data/certificates";
 import { ArrowRight } from "@/components/icons";
 
 // One static page per company slug, generated for each locale by the parent
@@ -47,6 +49,7 @@ export default async function CompanyPage({
   const meta = companyMeta[idx];
   const card = dict.companies.cards[idx];
   const cd = dict.companyDetail;
+  const certs = companyCertificates[slug] ?? [];
 
   return (
     <>
@@ -84,22 +87,53 @@ export default async function CompanyPage({
             <h2>{cd.certsTitle}</h2>
             <p className="lead">{cd.certsLead}</p>
           </div>
-          <div className="grid grid-3">
-            {cd.certs.map((cert) => (
-              <article className="cert-card reveal" key={cert.label}>
-                <div className="img-frame">
-                  <div className="img-frame__inner">
-                    <span className="img-frame__label">{cert.label}</span>
-                    <span className="img-frame__dim">PDF / JPG</span>
+          {certs.length > 0 ? (
+            <div className="grid grid-3">
+              {certs.map((c) => {
+                const m = CERT_META[c.kind];
+                return (
+                  <article className="cert-card reveal" key={c.kind}>
+                    <a
+                      className="cert-card__frame"
+                      href={c.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${m.en} — ${card.name}`}
+                    >
+                      <Image
+                        className="cert-card__photo"
+                        src={c.src}
+                        alt={`${m.en} — ${card.name}`}
+                        fill
+                        sizes="(max-width: 620px) 100vw, (max-width: 960px) 50vw, 33vw"
+                      />
+                    </a>
+                    <div className="cert-card__meta">
+                      <h3>{lang === "ar" ? m.ar : m.en}</h3>
+                      <p>{lang === "ar" ? m.noteAr : m.noteEn}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="grid grid-3">
+              {cd.certs.map((cert) => (
+                <article className="cert-card reveal" key={cert.label}>
+                  <div className="img-frame">
+                    <div className="img-frame__inner">
+                      <span className="img-frame__label">{cert.label}</span>
+                      <span className="img-frame__dim">PDF / JPG</span>
+                    </div>
                   </div>
-                </div>
-                <div className="cert-card__meta">
-                  <h3>{cert.label}</h3>
-                  <p>{cert.note}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <div className="cert-card__meta">
+                    <h3>{cert.label}</h3>
+                    <p>{cert.note}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

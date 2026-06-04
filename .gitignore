@@ -39,6 +39,9 @@ yarn-error.log*
 # local Claude Code tooling (machine-specific dev config)
 .claude/
 
+# raw certificate/source files — converted + optimized into /public/images/certificates
+/src/images/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

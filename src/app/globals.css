@@ -244,6 +244,8 @@ p  { color: var(--body); }
 .company-card__links { margin-top: 1.1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.4rem; }
 .company-card__links .company-card__link { margin-top: 0; }
 .company-card__link--ext { color: var(--muted); }
+.company-card__ph { width: 100%; aspect-ratio: 3 / 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; text-align: center; padding: 1rem; background: linear-gradient(135deg, #EEF3FA 0%, #E3EBF6 100%); border-bottom: 1px solid var(--line); }
+.company-card__ph-name { font-family: var(--font-display); font-weight: 700; color: var(--dark); font-size: 1.05rem; }
 
 /* Feature (why-us) */
 .feature { padding: 1.75rem; border-radius: var(--radius); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10); }
@@ -263,6 +265,9 @@ p  { color: var(--body); }
 .cert-card__meta { padding-top: 1rem; text-align: center; }
 .cert-card__meta h3 { font-size: 1.05rem; }
 .cert-card__meta p { color: var(--muted); font-size: .9rem; margin-top: .25rem; }
+.cert-card__frame { position: relative; display: block; aspect-ratio: 3 / 4; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: box-shadow var(--t), border-color var(--t); }
+.cert-card__frame:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
+.cert-card__photo { object-fit: contain; }
 
 /* Clients / logo wall */
 .logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }

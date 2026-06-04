@@ -26,13 +26,20 @@ export default function Companies({
             const meta = companyMeta[i];
             return (
               <article className="card company-card reveal" key={card.name}>
-                <Image
-                  className="company-card__img"
-                  src={meta.img}
-                  alt={card.alt}
-                  width={640}
-                  height={420}
-                />
+                {meta.img ? (
+                  <Image
+                    className="company-card__img"
+                    src={meta.img}
+                    alt={card.alt}
+                    width={640}
+                    height={420}
+                  />
+                ) : (
+                  <div className="company-card__ph" aria-hidden="true">
+                    <span className="company-card__ph-name">{card.name}</span>
+                    <span className="img-frame__dim">Photo coming soon</span>
+                  </div>
+                )}
                 <div className="company-card__body">
                   <span className="company-card__tag">{card.tag}</span>
                   <h3>{card.name}</h3>

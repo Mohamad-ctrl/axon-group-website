@@ -68,6 +68,12 @@ const en = {
         alt: "Axon Amenities",
       },
       {
+        tag: "Uniforms & Garments",
+        name: "Axon Garments",
+        desc: "Tailored uniforms and workwear for hospitality, healthcare, security, schools and corporate teams — with in-house embroidery.",
+        alt: "Professional uniforms by Axon Garments",
+      },
+      {
         tag: "Swimming Pools",
         name: "Axon Pools",
         desc: "Design, construction and maintenance of premium swimming pools — from concept and water treatment to leak detection.",
