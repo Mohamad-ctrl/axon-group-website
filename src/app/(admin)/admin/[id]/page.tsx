@@ -35,11 +35,15 @@ export default async function ApplicationDetail({
   if (!data) notFound();
   const app = data as App;
 
-  let cvUrl: string | null = null;
+  let cvUrl: string | null = null; // inline — for the preview / "open in new tab"
+  let cvDownloadUrl: string | null = null; // forces a download with the original filename
   if (app.cv_path) {
-    const signed = await supabase.storage.from(CV_BUCKET).createSignedUrl(app.cv_path, 3600);
-    cvUrl = signed.data?.signedUrl ?? null;
+    const bucket = supabase.storage.from(CV_BUCKET);
+    cvUrl = (await bucket.createSignedUrl(app.cv_path, 3600)).data?.signedUrl ?? null;
+    cvDownloadUrl =
+      (await bucket.createSignedUrl(app.cv_path, 3600, { download: app.cv_filename ?? true })).data?.signedUrl ?? null;
   }
+  const isPdf = /\.pdf$/i.test(app.cv_filename ?? "") || /\.pdf$/i.test(app.cv_path ?? "");
 
   const isRejected = app.stage === "rejected";
   const currentIdx = PIPELINE.indexOf(app.stage as (typeof PIPELINE)[number]);
@@ -80,7 +84,6 @@ export default async function ApplicationDetail({
             <div><dt>Email</dt><dd><a href={`mailto:${app.email}`}>{app.email}</a></dd></div>
             <div><dt>Phone</dt><dd><a href={`tel:${app.phone}`} style={{ direction: "ltr", display: "inline-block" }}>{app.phone}</a></dd></div>
             <div><dt>Role</dt><dd>{app.job_title}</dd></div>
-            <div><dt>CV</dt><dd>{cvUrl ? <a href={cvUrl} target="_blank" rel="noopener noreferrer">Download {app.cv_filename}</a> : "—"}</dd></div>
           </dl>
           {app.cover_letter && (
             <>
@@ -119,6 +122,38 @@ export default async function ApplicationDetail({
           </div>
         </aside>
       </div>
+
+      {app.cv_path && (
+        <div className="admin-card cv-card">
+          <div className="cv-card__head">
+            <h2>CV / Resume</h2>
+            <div className="cv-card__actions">
+              {cvUrl && (
+                <a className="btn btn--ghost" href={cvUrl} target="_blank" rel="noopener noreferrer">
+                  Open in new tab
+                </a>
+              )}
+              {cvDownloadUrl && (
+                <a className="btn btn--primary" href={cvDownloadUrl}>
+                  Download{app.cv_filename ? ` (${app.cv_filename})` : ""}
+                </a>
+              )}
+            </div>
+          </div>
+          {isPdf && cvUrl ? (
+            <iframe
+              className="cv-preview"
+              src={cvUrl}
+              title={`CV — ${app.first_name} ${app.last_name}`}
+            />
+          ) : (
+            <p className="muted cv-card__note">
+              Inline preview is available for PDF files only. Use “Download” or “Open in new tab” to view this
+              {app.cv_filename ? ` ${app.cv_filename.split(".").pop()?.toUpperCase()}` : ""} file.
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
