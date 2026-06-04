@@ -37,20 +37,24 @@ export default function Companies({
                   <span className="company-card__tag">{card.tag}</span>
                   <h3>{card.name}</h3>
                   <p>{card.desc}</p>
-                  {meta.external ? (
-                    <a
+                  <div className="company-card__links">
+                    <Link
                       className="company-card__link"
-                      href={meta.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`/${lang}/companies/${meta.slug}`}
                     >
-                      {dict.visit} <ArrowRight />
-                    </a>
-                  ) : (
-                    <Link className="company-card__link" href={`/${lang}${meta.href}`}>
-                      {dict.contact} <ArrowRight />
+                      {dict.learnMore} <ArrowRight />
                     </Link>
-                  )}
+                    {meta.website && (
+                      <a
+                        className="company-card__link company-card__link--ext"
+                        href={meta.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {dict.visit} <ArrowRight />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             );

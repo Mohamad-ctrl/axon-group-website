@@ -5,14 +5,9 @@ export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "software-engineer",
     company: { en: "Axon Group", ar: "مجموعة أكسون" },
-    department: { en: "Engineering & IT", ar: "الهندسة وتقنية المعلومات" },
     location: { en: "Abu Dhabi, UAE", ar: "أبوظبي، الإمارات" },
     type: { en: "Full-time", ar: "دوام كامل" },
     title: { en: "Software Engineer", ar: "مهندس برمجيات" },
-    excerpt: {
-      en: "Build and maintain the websites and internal tools for Axon Group and its companies.",
-      ar: "بناء وصيانة المواقع الإلكترونية والأدوات الداخلية لمجموعة أكسون وشركاتها.",
-    },
     description: {
       en: [
         "Axon Group is investing in its digital presence, and we're looking for a software engineer to help lead that effort across the group's companies.",
@@ -21,20 +16,6 @@ export const seedJobs: Omit<Job, "active">[] = [
       ar: [
         "تستثمر مجموعة أكسون في حضورها الرقمي، ونبحث عن مهندس برمجيات للمساعدة في قيادة هذا الجهد عبر شركات المجموعة.",
         "ستعمل على مواقع حديثة وسريعة وعلى الأدوات الداخلية التي تدعم عملياتنا — مع تولّي المشاريع من البداية إلى النهاية، من التصميم حتى النشر.",
-      ],
-    },
-    responsibilities: {
-      en: [
-        "Develop and maintain responsive, SEO-friendly websites for the group's companies.",
-        "Build internal tools and dashboards that streamline operations.",
-        "Own performance, accessibility and security best practices.",
-        "Collaborate with marketing and management on digital initiatives.",
-      ],
-      ar: [
-        "تطوير وصيانة مواقع متجاوبة ومهيأة لمحركات البحث لشركات المجموعة.",
-        "بناء أدوات داخلية ولوحات تحكم تبسّط العمليات.",
-        "الالتزام بأفضل ممارسات الأداء وسهولة الوصول والأمان.",
-        "التعاون مع فريقي التسويق والإدارة في المبادرات الرقمية.",
       ],
     },
     requirements: {
@@ -56,14 +37,9 @@ export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "facility-maintenance-technician",
     company: { en: "Axon Facility Management", ar: "أكسون لإدارة المرافق" },
-    department: { en: "Facility Management", ar: "إدارة المرافق" },
     location: { en: "Abu Dhabi, UAE", ar: "أبوظبي، الإمارات" },
     type: { en: "Full-time", ar: "دوام كامل" },
     title: { en: "Facility Maintenance Technician (MEP)", ar: "فني صيانة مرافق (ميكانيكا وكهرباء وسباكة)" },
-    excerpt: {
-      en: "Carry out preventive and reactive MEP maintenance across our managed facilities.",
-      ar: "تنفيذ أعمال الصيانة الوقائية والطارئة للأنظمة الميكانيكية والكهربائية والصحية في المرافق التي نديرها.",
-    },
     description: {
       en: [
         "Join Axon Facility Management's technical team servicing commercial and residential properties across Abu Dhabi.",
@@ -72,20 +48,6 @@ export const seedJobs: Omit<Job, "active">[] = [
       ar: [
         "انضم إلى الفريق الفني في أكسون لإدارة المرافق الذي يخدم العقارات التجارية والسكنية في أنحاء أبوظبي.",
         "ستتولى أعمال الصيانة الميكانيكية والكهربائية والصحية اليومية للحفاظ على تشغيل مرافق عملائنا بأمان وموثوقية.",
-      ],
-    },
-    responsibilities: {
-      en: [
-        "Perform preventive and corrective maintenance on HVAC, electrical and plumbing systems.",
-        "Diagnose faults and complete repairs to a high standard of safety.",
-        "Keep accurate job records and report on completed work.",
-        "Respond to call-outs and emergencies as part of a rota.",
-      ],
-      ar: [
-        "تنفيذ الصيانة الوقائية والتصحيحية لأنظمة التكييف والكهرباء والسباكة.",
-        "تشخيص الأعطال وإتمام الإصلاحات وفق معايير سلامة عالية.",
-        "الاحتفاظ بسجلات دقيقة للأعمال وتقديم تقارير عن الأعمال المنجزة.",
-        "الاستجابة للطلبات والحالات الطارئة ضمن نظام مناوبات.",
       ],
     },
     requirements: {
@@ -107,14 +69,9 @@ export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "pool-maintenance-engineer",
     company: { en: "Axon Pools", ar: "أكسون لحمامات السباحة" },
-    department: { en: "Operations", ar: "العمليات" },
     location: { en: "Abu Dhabi, UAE", ar: "أبوظبي، الإمارات" },
     type: { en: "Full-time", ar: "دوام كامل" },
     title: { en: "Swimming Pool Maintenance Engineer", ar: "مهندس صيانة حمامات سباحة" },
-    excerpt: {
-      en: "Maintain water quality, equipment and safety for our residential and commercial pools.",
-      ar: "الحفاظ على جودة المياه والمعدات والسلامة في حمامات السباحة السكنية والتجارية.",
-    },
     description: {
       en: [
         "Axon Pools designs, builds and maintains premium swimming pools across the UAE.",
@@ -123,20 +80,6 @@ export const seedJobs: Omit<Job, "active">[] = [
       ar: [
         "تصمم أكسون حمامات السباحة الفاخرة وتبنيها وتصونها في أنحاء الإمارات.",
         "نوظّف مهندسًا لإدارة صيانة مجموعة من حمامات السباحة — لضمان توازن مثالي للمياه ومعدات سليمة وعملاء راضين.",
-      ],
-    },
-    responsibilities: {
-      en: [
-        "Test and balance water chemistry; manage dosing and filtration.",
-        "Service pumps, filters, heaters and automated systems.",
-        "Carry out leak detection and minor repairs.",
-        "Advise clients on care and recommend upgrades.",
-      ],
-      ar: [
-        "فحص وموازنة كيمياء المياه وإدارة الجرعات والترشيح.",
-        "صيانة المضخات والمرشّحات والسخّانات والأنظمة الآلية.",
-        "إجراء كشف التسربات والإصلاحات البسيطة.",
-        "إرشاد العملاء بشأن العناية واقتراح التحسينات.",
       ],
     },
     requirements: {
@@ -158,14 +101,9 @@ export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "landscape-supervisor",
     company: { en: "Green Dream", ar: "الحلم الأخضر" },
-    department: { en: "Operations", ar: "العمليات" },
     location: { en: "Abu Dhabi, UAE", ar: "أبوظبي، الإمارات" },
     type: { en: "Full-time", ar: "دوام كامل" },
     title: { en: "Landscape Supervisor", ar: "مشرف تنسيق حدائق" },
-    excerpt: {
-      en: "Lead landscaping and irrigation crews to deliver and maintain beautiful green spaces.",
-      ar: "قيادة فرق تنسيق الحدائق والري لإنشاء وصيانة مساحات خضراء جميلة.",
-    },
     description: {
       en: [
         "Green Dream creates and maintains gardens, green spaces and irrigation systems across the UAE.",
@@ -174,20 +112,6 @@ export const seedJobs: Omit<Job, "active">[] = [
       ar: [
         "ينشئ الحلم الأخضر الحدائق والمساحات الخضراء وأنظمة الري ويصونها في أنحاء الإمارات.",
         "نبحث عن مشرف ميداني لقيادة فرق المواقع وضمان تنفيذ كل مشروع وفق معايير عالية.",
-      ],
-    },
-    responsibilities: {
-      en: [
-        "Supervise landscaping, planting and irrigation teams on site.",
-        "Plan daily work, materials and schedules.",
-        "Ensure quality, safety and client satisfaction.",
-        "Maintain irrigation systems and troubleshoot issues.",
-      ],
-      ar: [
-        "الإشراف على فرق تنسيق الحدائق والزراعة والري في الموقع.",
-        "تخطيط العمل اليومي والمواد والجداول الزمنية.",
-        "ضمان الجودة والسلامة ورضا العملاء.",
-        "صيانة أنظمة الري ومعالجة الأعطال.",
       ],
     },
     requirements: {
@@ -209,14 +133,9 @@ export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "civil-site-engineer",
     company: { en: "LSF Contracting", ar: "إل إس إف للمقاولات" },
-    department: { en: "Construction", ar: "المقاولات" },
     location: { en: "Abu Dhabi, UAE", ar: "أبوظبي، الإمارات" },
     type: { en: "Full-time", ar: "دوام كامل" },
     title: { en: "Civil Site Engineer", ar: "مهندس موقع مدني" },
-    excerpt: {
-      en: "Supervise civil works on site and ensure projects are delivered safely, on time and to spec.",
-      ar: "الإشراف على الأعمال المدنية في الموقع وضمان تنفيذ المشاريع بأمان وفي الوقت المحدد ووفق المواصفات.",
-    },
     description: {
       en: [
         "LSF Contracting delivers civil construction, steel structures and turnkey projects across the UAE.",
@@ -225,20 +144,6 @@ export const seedJobs: Omit<Job, "active">[] = [
       ar: [
         "تنفّذ إل إس إف للمقاولات أعمال الإنشاءات المدنية والهياكل الحديدية والمشاريع المتكاملة في أنحاء الإمارات.",
         "نوظّف مهندس موقع للإشراف على أنشطة البناء اليومية وتنسيق الفرق ومقاولي الباطن وضبط الجودة.",
-      ],
-    },
-    responsibilities: {
-      en: [
-        "Supervise site activities and ensure work follows drawings and specifications.",
-        "Coordinate labour, subcontractors and materials.",
-        "Monitor quality, progress and HSE compliance.",
-        "Prepare site reports and support project planning.",
-      ],
-      ar: [
-        "الإشراف على أنشطة الموقع وضمان مطابقة العمل للمخططات والمواصفات.",
-        "تنسيق العمالة ومقاولي الباطن والمواد.",
-        "مراقبة الجودة والتقدّم والالتزام بالصحة والسلامة.",
-        "إعداد تقارير الموقع ودعم تخطيط المشروع.",
       ],
     },
     requirements: {
@@ -260,14 +165,9 @@ export const seedJobs: Omit<Job, "active">[] = [
   {
     slug: "business-development-executive",
     company: { en: "Axon Group", ar: "مجموعة أكسون" },
-    department: { en: "Sales & Marketing", ar: "المبيعات والتسويق" },
     location: { en: "Abu Dhabi, UAE", ar: "أبوظبي، الإمارات" },
     type: { en: "Full-time", ar: "دوام كامل" },
     title: { en: "Business Development Executive", ar: "تنفيذي تطوير أعمال" },
-    excerpt: {
-      en: "Grow Axon Group's client base across facility management, construction and more.",
-      ar: "تنمية قاعدة عملاء مجموعة أكسون عبر إدارة المرافق والمقاولات وغيرها.",
-    },
     description: {
       en: [
         "As a group of specialized companies, Axon Group offers clients a single partner for many services.",
@@ -276,20 +176,6 @@ export const seedJobs: Omit<Job, "active">[] = [
       ar: [
         "بوصفها مجموعة من الشركات المتخصصة، تقدّم مجموعة أكسون لعملائها شريكًا واحدًا لخدمات متعددة.",
         "نبحث عن تنفيذي تطوير أعمال لبناء العلاقات وتوليد العملاء المحتملين والفوز بعقود جديدة عبر شركاتنا.",
-      ],
-    },
-    responsibilities: {
-      en: [
-        "Identify and pursue new business opportunities across the group's services.",
-        "Build and maintain relationships with clients and partners.",
-        "Prepare proposals and coordinate with operating companies.",
-        "Meet sales targets and report on the pipeline.",
-      ],
-      ar: [
-        "تحديد فرص الأعمال الجديدة عبر خدمات المجموعة ومتابعتها.",
-        "بناء العلاقات مع العملاء والشركاء والحفاظ عليها.",
-        "إعداد العروض والتنسيق مع الشركات التشغيلية.",
-        "تحقيق أهداف المبيعات وتقديم تقارير عن مسار الصفقات.",
       ],
     },
     requirements: {

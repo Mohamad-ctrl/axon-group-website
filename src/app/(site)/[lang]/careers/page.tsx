@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import JobsExplorer from "@/components/careers/JobsExplorer";
-import { getActiveJobs, departmentsFor } from "@/lib/jobs";
+import { getActiveJobs } from "@/lib/jobs";
 import { ArrowRight, Growth, Users, Shield, Sparkle } from "@/components/icons";
 
 export const dynamic = "force-dynamic";
@@ -36,7 +36,6 @@ export default async function CareersPage({
   const dict = getDictionary(lang);
   const c = dict.careers;
   const jobs = await getActiveJobs();
-  const departments = departmentsFor(lang, jobs);
 
   return (
     <>
@@ -88,7 +87,7 @@ export default async function CareersPage({
             <h2>{c.openTitle}</h2>
             <p className="lead">{c.rolesCount.replace("{count}", String(jobs.length))}</p>
           </div>
-          <JobsExplorer lang={lang} dict={c} jobs={jobs} departments={departments} />
+          <JobsExplorer lang={lang} dict={c} jobs={jobs} />
         </div>
       </section>
     </>

@@ -8,13 +8,10 @@ export type Job = {
   active: boolean;
   posted: string;
   company: L<string>;
-  department: L<string>;
   location: L<string>;
   type: L<string>;
   title: L<string>;
-  excerpt: L<string>;
   description: L<string[]>;
-  responsibilities: L<string[]>;
   requirements: L<string[]>;
 };
 
@@ -53,8 +50,4 @@ export async function getJobBySlug(slug: string): Promise<Job | null> {
     .eq("slug", slug)
     .maybeSingle();
   return data ? rowToJob(data as JobRow) : null;
-}
-
-export function departmentsFor(locale: Locale, jobs: Job[]): string[] {
-  return Array.from(new Set(jobs.map((j) => j.department[locale])));
 }

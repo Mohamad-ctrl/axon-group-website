@@ -44,15 +44,28 @@ const en = {
   companies: {
     eyebrow: "The group",
     title: "Our companies",
-    lead: "Five specialist companies, plus group-level property and management services — each delivering its own discipline to the same standard.",
+    lead: "A family of specialist companies — each focused on its own discipline, all held to the same standard across the UAE.",
     visit: "Visit website",
+    learnMore: "Learn more",
     contact: "Get in touch",
     cards: [
       {
-        tag: "Facility Management",
-        name: "Axon Facility Management",
-        desc: "Integrated FM: MEP and HVAC, electrical and plumbing, cleaning, fire & safety, pest control and waste management.",
-        alt: "Commercial buildings serviced by Axon Facility Management",
+        tag: "Landscaping",
+        name: "Green Dream Agricultural",
+        desc: "Landscape design, irrigation systems, indoor plants and green-space maintenance for a greener, cooler UAE.",
+        alt: "Landscaped park designed by Green Dream Agricultural",
+      },
+      {
+        tag: "Waste Management",
+        name: "Axon Waste Management",
+        desc: "Integrated waste collection, recycling and disposal — keeping facilities, sites and communities across the UAE clean, safe and compliant.",
+        alt: "Waste collection and recycling by Axon Waste Management",
+      },
+      {
+        tag: "Amenities",
+        name: "Axon Amenities",
+        desc: "Quality amenities and supplies for hospitality, residential and commercial spaces across the UAE. Full details coming soon.",
+        alt: "Axon Amenities",
       },
       {
         tag: "Swimming Pools",
@@ -61,10 +74,10 @@ const en = {
         alt: "Swimming pool built by Axon Pools",
       },
       {
-        tag: "Uniforms & Garments",
-        name: "Axon Garments",
-        desc: "Tailored uniforms and workwear for hospitality, healthcare, security, schools and corporate teams — with in-house embroidery.",
-        alt: "Professional uniforms by Axon Garments",
+        tag: "Facility Management",
+        name: "Axon Facility Management",
+        desc: "Integrated FM: MEP and HVAC, electrical and plumbing, cleaning, fire & safety and pest control.",
+        alt: "Commercial buildings serviced by Axon Facility Management",
       },
       {
         tag: "Construction & Contracting",
@@ -72,19 +85,28 @@ const en = {
         desc: "Civil construction, steel structures, paving and turnkey contracting across the UAE — delivering quality builds since 2010.",
         alt: "Modern commercial building constructed by LSF Contracting",
       },
-      {
-        tag: "Landscaping",
-        name: "Green Dream",
-        desc: "Landscape design, irrigation systems, indoor plants and green-space maintenance for a greener, cooler UAE.",
-        alt: "Landscaped park designed by Green Dream",
-      },
-      {
-        tag: "Property & Management",
-        name: "Property & Group Management",
-        desc: "Real-estate and management services that coordinate the group and support clients across every Axon discipline.",
-        alt: "Waterfront real estate managed by Axon Group",
-      },
     ],
+  },
+  companyDetail: {
+    crumbHome: "Home",
+    crumbCompanies: "Our Companies",
+    back: "All companies",
+    visit: "Visit website",
+    certsEyebrow: "Quality & compliance",
+    certsTitle: "Certifications & licenses",
+    certsLead:
+      "Accreditations and licenses held by the company. The slots below are reserved for the certificate scans you'll provide.",
+    certs: [
+      { label: "ISO 9001", note: "Quality Management" },
+      { label: "ISO 45001", note: "Occupational Health & Safety" },
+      { label: "Trading License", note: "Department of Economic Development" },
+    ],
+    projectsEyebrow: "Selected work",
+    projectsTitle: "Projects",
+    projectsLead:
+      "A snapshot of work delivered. These slots are reserved for the project photos you'll provide.",
+    projectTitlePlaceholder: "Project title goes here",
+    projectDescPlaceholder: "One line on the client, scope and outcome.",
   },
   why: {
     eyebrow: "Why choose us",
