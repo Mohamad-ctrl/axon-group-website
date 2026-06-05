@@ -62,10 +62,10 @@ const en = {
         alt: "Waste collection and recycling by Axon Waste Management",
       },
       {
-        tag: "Amenities",
+        tag: "Integrated Services",
         name: "Axon Amenities",
-        desc: "Quality amenities and supplies for hospitality, residential and commercial spaces across the UAE. Full details coming soon.",
-        alt: "Axon Amenities",
+        desc: "Facility management, swimming pools and contracting under one roof — delivering Axon's specialist standard across Dubai and the wider UAE.",
+        alt: "Axon Amenities servicing a high-rise tower in Dubai",
       },
       {
         tag: "Uniforms & Garments",
@@ -75,9 +75,9 @@ const en = {
       },
       {
         tag: "Swimming Pools",
-        name: "Axon Pools",
+        name: "Axon Swimming Pools",
         desc: "Design, construction and maintenance of premium swimming pools — from concept and water treatment to leak detection.",
-        alt: "Swimming pool built by Axon Pools",
+        alt: "Swimming pool built by Axon Swimming Pools",
       },
       {
         tag: "Facility Management",
@@ -110,7 +110,7 @@ const en = {
     projectsEyebrow: "Selected work",
     projectsTitle: "Projects",
     projectsLead:
-      "A snapshot of work delivered. These slots are reserved for the project photos you'll provide.",
+      "A selection of projects delivered for our clients across the UAE.",
     projectTitlePlaceholder: "Project title goes here",
     projectDescPlaceholder: "One line on the client, scope and outcome.",
   },
@@ -127,7 +127,7 @@ const en = {
   projects: {
     eyebrow: "Selected work",
     title: "Featured projects",
-    lead: "A snapshot of work delivered across the group. These slots are reserved for the project photos you'll provide.",
+    lead: "A selection of work delivered across the group — landscaping, facility management, swimming pools and more.",
     titlePlaceholder: "Project title goes here",
     descPlaceholder: "One line on the client, scope and outcome.",
     cats: ["Facility Management", "Construction", "Landscaping"],

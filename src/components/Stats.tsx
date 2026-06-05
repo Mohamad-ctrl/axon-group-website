@@ -2,9 +2,9 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 export default function Stats({ dict }: { dict: Dictionary["stats"] }) {
   const stats = [
-    { num: 5, suffix: "", label: dict.companies },
+    { num: 7, suffix: "", label: dict.companies },
     { num: 100, suffix: "+", label: dict.clients },
-    { num: 14, suffix: "+", label: dict.years },
+    { num: 20, suffix: "+", label: dict.years },
     { num: 500, suffix: "+", label: dict.projects },
   ];
   return (

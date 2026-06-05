@@ -13,11 +13,13 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const companyLinks = [
-  { href: "https://axonfm.com/", label: "Axon Facility Mgmt" },
-  { href: "https://axonpools.com/", label: "Axon Pools" },
-  { href: "https://axongarments.com/", label: "Axon Garments" },
-  { href: "https://lsf.ae/", label: "LSF Contracting" },
-  { href: "https://greendreamco.com/", label: "Green Dream" },
+  { slug: "green-dream", label: "Green Dream Agricultural" },
+  { slug: "axon-waste-management", label: "Axon Waste Management" },
+  { slug: "axon-amenities", label: "Axon Amenities" },
+  { slug: "axon-pools", label: "Axon Swimming Pools" },
+  { slug: "axon-facility-management", label: "Axon Facility Management" },
+  { slug: "axon-garments", label: "Axon Garments" },
+  { slug: "lsf-contracting", label: "LSF Contracting" },
 ];
 
 export default function Footer({
@@ -47,8 +49,8 @@ export default function Footer({
             <h4>{dict.companiesTitle}</h4>
             <ul>
               {companyLinks.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+                <li key={l.slug}>
+                  <Link href={`/${lang}/companies/${l.slug}`}>{l.label}</Link>
                 </li>
               ))}
             </ul>

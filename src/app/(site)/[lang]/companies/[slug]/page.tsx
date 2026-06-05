@@ -6,6 +6,7 @@ import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { companyMeta } from "@/data/companies";
 import { companyCertificates, CERT_META } from "@/data/certificates";
+import { companyProjects, PROJECT_CAT } from "@/data/projects";
 import { ArrowRight } from "@/components/icons";
 
 // One static page per company slug, generated for each locale by the parent
@@ -32,9 +33,6 @@ export async function generateMetadata({
   };
 }
 
-// Placeholder project slots — mirror the homepage Projects section.
-const projectFiles = ["project-1.webp", "project-2.webp", "project-3.webp"];
-
 export default async function CompanyPage({
   params,
 }: {
@@ -50,6 +48,7 @@ export default async function CompanyPage({
   const card = dict.companies.cards[idx];
   const cd = dict.companyDetail;
   const certs = companyCertificates[slug] ?? [];
+  const projects = companyProjects[slug] ?? [];
 
   return (
     <>
@@ -137,37 +136,40 @@ export default async function CompanyPage({
         </div>
       </section>
 
-      <section className="section section--alt">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="eyebrow eyebrow--center">{cd.projectsEyebrow}</p>
-            <h2>{cd.projectsTitle}</h2>
-            <p className="lead">{cd.projectsLead}</p>
-          </div>
-          <div className="grid grid-3">
-            {projectFiles.map((file) => (
-              <article className="project-card reveal" key={file}>
-                <div className="img-frame">
-                  <div className="img-frame__inner">
-                    <span className="img-frame__label">{file}</span>
-                    <span className="img-frame__dim">800 × 600</span>
+      {projects.length > 0 && (
+        <section className="section section--alt">
+          <div className="container">
+            <div className="section-head reveal">
+              <p className="eyebrow eyebrow--center">{cd.projectsEyebrow}</p>
+              <h2>{cd.projectsTitle}</h2>
+              <p className="lead">{cd.projectsLead}</p>
+            </div>
+            <div className="grid grid-3">
+              {projects.map((p) => (
+                <article className="project-card reveal" key={p.img}>
+                  <Image
+                    className="project-card__img"
+                    src={p.img}
+                    alt={lang === "ar" ? p.ar : p.en}
+                    width={600}
+                    height={450}
+                  />
+                  <div className="project-card__meta">
+                    <span className="project-card__cat">{lang === "ar" ? PROJECT_CAT[p.kind].ar : PROJECT_CAT[p.kind].en}</span>
+                    <h3>{lang === "ar" ? p.ar : p.en}</h3>
                   </div>
-                </div>
-                <div className="project-card__meta">
-                  <span className="project-card__cat">{card.tag}</span>
-                  <h3>{cd.projectTitlePlaceholder}</h3>
-                  <p>{cd.projectDescPlaceholder}</p>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-          <p style={{ textAlign: "center", marginTop: "2.5rem" }}>
-            <Link className="btn btn--ghost" href={`/${lang}#companies`}>
-              {cd.back}
-            </Link>
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
+
+      <div className="container" style={{ textAlign: "center", padding: "2.5rem 0 4rem" }}>
+        <Link className="btn btn--ghost" href={`/${lang}#companies`}>
+          {cd.back}
+        </Link>
+      </div>
     </>
   );
 }

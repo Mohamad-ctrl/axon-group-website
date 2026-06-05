@@ -1,8 +1,15 @@
+import Image from "next/image";
+import { featuredProjects, PROJECT_CAT } from "@/data/projects";
+import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
-const files = ["project-1.webp", "project-2.webp", "project-3.webp"];
-
-export default function Projects({ dict }: { dict: Dictionary["projects"] }) {
+export default function Projects({
+  lang,
+  dict,
+}: {
+  lang: Locale;
+  dict: Dictionary["projects"];
+}) {
   return (
     <section className="section" id="projects">
       <div className="container">
@@ -12,18 +19,18 @@ export default function Projects({ dict }: { dict: Dictionary["projects"] }) {
           <p className="lead">{dict.lead}</p>
         </div>
         <div className="grid grid-3">
-          {dict.cats.map((cat, i) => (
-            <article className="project-card reveal" key={files[i]}>
-              <div className="img-frame">
-                <div className="img-frame__inner">
-                  <span className="img-frame__label">{files[i]}</span>
-                  <span className="img-frame__dim">800 × 600</span>
-                </div>
-              </div>
+          {featuredProjects.map((p) => (
+            <article className="project-card reveal" key={p.img}>
+              <Image
+                className="project-card__img"
+                src={p.img}
+                alt={lang === "ar" ? p.ar : p.en}
+                width={600}
+                height={450}
+              />
               <div className="project-card__meta">
-                <span className="project-card__cat">{cat}</span>
-                <h3>{dict.titlePlaceholder}</h3>
-                <p>{dict.descPlaceholder}</p>
+                <span className="project-card__cat">{lang === "ar" ? PROJECT_CAT[p.kind].ar : PROJECT_CAT[p.kind].en}</span>
+                <h3>{lang === "ar" ? p.ar : p.en}</h3>
               </div>
             </article>
           ))}

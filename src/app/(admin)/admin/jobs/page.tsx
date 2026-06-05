@@ -7,8 +7,6 @@ import DeleteJobButton from "./DeleteJobButton";
 
 export const dynamic = "force-dynamic";
 
-const cols = { gridTemplateColumns: "2fr 1.4fr 1fr auto" };
-
 export default async function AdminJobs() {
   if (!(await isAuthenticated())) redirect("/admin/login");
   const jobs = await getAllJobs();
@@ -27,12 +25,12 @@ export default async function AdminJobs() {
       {jobs.length === 0 ? (
         <p className="jobs__empty">No jobs yet. Click “Post a new job” to create one.</p>
       ) : (
-        <div className="admin-table">
-          <div className="admin-table__head" style={cols}>
+        <div className="admin-table admin-table--jobs">
+          <div className="admin-table__head">
             <span>Title</span><span>Type</span><span>Status</span><span></span>
           </div>
           {jobs.map((j) => (
-            <div className="admin-table__row" style={cols} key={j.slug}>
+            <div className="admin-table__row" key={j.slug}>
               <span><b>{j.title.en}</b><br /><span className="muted">{j.company.en}</span></span>
               <span>{j.type.en}</span>
               <span>

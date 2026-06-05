@@ -73,7 +73,7 @@ export default function ApplicationsTable({
               <span>{r.role}</span>
               <span><span className={`stage-badge stage-badge--${r.stage}`}>{STAGE_LABEL[r.stage]}</span></span>
               <span className="muted">{r.applied}</span>
-              <span><Link className="btn btn--ghost" href={`/admin/${r.id}`} style={{ padding: ".4rem .9rem" }}>View</Link></span>
+              <span style={{ textAlign: "right" }}><Link className="btn btn--ghost" href={`/admin/${r.id}`} style={{ padding: ".4rem .9rem" }}>View</Link></span>
             </div>
           ))}
         </div>

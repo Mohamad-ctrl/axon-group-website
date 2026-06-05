@@ -26,7 +26,7 @@ export default async function Home({
       <About lang={lang} dict={dict.about} />
       <Companies lang={lang} dict={dict.companies} />
       <WhyAxon dict={dict.why} />
-      <Projects dict={dict.projects} />
+      <Projects lang={lang} dict={dict.projects} />
       <Clients dict={dict.clients} />
       <CTA dict={dict.cta} />
     </>
