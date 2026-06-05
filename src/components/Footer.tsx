@@ -4,6 +4,7 @@ import {
   MapPin,
   Phone,
   Mail,
+  Clock,
   Linkedin,
   Instagram,
   Facebook,
@@ -80,6 +81,10 @@ export default function Footer({
               <li>
                 <Mail />
                 <a href="mailto:info@axongroup.ae">info@axongroup.ae</a>
+              </li>
+              <li>
+                <Clock />
+                <span>{dict.hours}</span>
               </li>
             </ul>
           </div>

@@ -79,14 +79,25 @@ export default async function CompanyPage({
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
-          <div className="section-head reveal">
-            <p className="eyebrow eyebrow--center">{cd.certsEyebrow}</p>
-            <h2>{cd.certsTitle}</h2>
-            <p className="lead">{cd.certsLead}</p>
+          <div className="reveal" style={{ maxWidth: "760px", marginInline: "auto" }}>
+            <p className="eyebrow">{cd.overviewEyebrow}</p>
+            <div className="prose" style={{ marginTop: ".6rem" }}>
+              <p>{card.about}</p>
+            </div>
           </div>
-          {certs.length > 0 ? (
+        </div>
+      </section>
+
+      {certs.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <div className="section-head reveal">
+              <p className="eyebrow eyebrow--center">{cd.certsEyebrow}</p>
+              <h2>{cd.certsTitle}</h2>
+              <p className="lead">{cd.certsLead}</p>
+            </div>
             <div className="grid grid-3">
               {certs.map((c) => {
                 const m = CERT_META[c.kind];
@@ -115,26 +126,9 @@ export default async function CompanyPage({
                 );
               })}
             </div>
-          ) : (
-            <div className="grid grid-3">
-              {cd.certs.map((cert) => (
-                <article className="cert-card reveal" key={cert.label}>
-                  <div className="img-frame">
-                    <div className="img-frame__inner">
-                      <span className="img-frame__label">{cert.label}</span>
-                      <span className="img-frame__dim">PDF / JPG</span>
-                    </div>
-                  </div>
-                  <div className="cert-card__meta">
-                    <h3>{cert.label}</h3>
-                    <p>{cert.note}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {projects.length > 0 && (
         <section className="section section--alt">

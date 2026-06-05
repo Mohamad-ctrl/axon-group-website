@@ -2,7 +2,7 @@ const en = {
   meta: {
     title: "Axon Group | Integrated Business Solutions in Abu Dhabi, UAE",
     description:
-      "Axon Group is an Abu Dhabi–based group of specialized companies in facility management, construction, swimming pools, landscaping and garments — one standard of excellence across the UAE.",
+      "Axon Group is an Abu Dhabi–based family of seven companies working in facility management, construction, landscaping, swimming pools, waste management and uniforms across the UAE.",
   },
   nav: {
     skip: "Skip to content",
@@ -18,9 +18,9 @@ const en = {
   },
   hero: {
     eyebrow: "Axon Group · Abu Dhabi, UAE",
-    title: "Integrated business solutions, delivered by specialists.",
+    title: "One group. Seven companies. One point of contact.",
     subtitle:
-      "One group, five specialized companies — facility management, construction, swimming pools, landscaping and garments — serving Abu Dhabi and the wider UAE with a single standard of excellence.",
+      "From facility management and construction to landscaping, swimming pools, waste and uniforms, our seven companies cover work that most businesses would otherwise split across a dozen suppliers. All based in Abu Dhabi, all held to the same standard across the UAE.",
     ctaPrimary: "Explore our companies",
     ctaSecondary: "Talk to us",
   },
@@ -32,19 +32,19 @@ const en = {
   },
   about: {
     eyebrow: "Who we are",
-    title: "A single group built on specialized expertise.",
-    lead: "Axon Group brings together a family of focused companies under one roof. Each is a specialist in its field — together, they let our clients source maintenance, construction, landscaping and supply from one trusted partner.",
+    title: "Seven companies that work as one.",
+    lead: "Axon Group brings several established UAE companies under one roof, the oldest trading since 1998. Each runs its own field — landscaping, facility management, construction, pools, waste and uniforms — but they share owners, standards and a single point of accountability. For the client, that means getting work that would usually take several suppliers from one team that actually coordinates.",
     points: [
-      { t: "One point of accountability.", d: "Multiple disciplines, coordinated by a single group." },
-      { t: "Local expertise.", d: "Deep knowledge of the Abu Dhabi and UAE market and regulations." },
-      { t: "Quality & safety first.", d: "ISO-certified processes across our operating companies." },
+      { t: "One point of accountability.", d: "Several disciplines, coordinated by one group, with one team to call when you need something." },
+      { t: "Local through and through.", d: "Built in Abu Dhabi, fluent in UAE regulations, suppliers and how things actually get done here." },
+      { t: "Quality and safety, not just on paper.", d: "ISO-certified processes and real HSE discipline across every operating company." },
     ],
     cta: "More about the group",
   },
   companies: {
     eyebrow: "The group",
     title: "Our companies",
-    lead: "A family of specialist companies — each focused on its own discipline, all held to the same standard across the UAE.",
+    lead: "Seven companies, each the expert in its own field, all backed by the same group and the same standards. Open any card to read the full story, certifications and recent projects.",
     visit: "Visit website",
     learnMore: "Learn more",
     contact: "Get in touch",
@@ -52,43 +52,57 @@ const en = {
       {
         tag: "Landscaping",
         name: "Green Dream Agricultural",
-        desc: "Landscape design, irrigation systems, indoor plants and green-space maintenance for a greener, cooler UAE.",
+        desc: "Landscape design, irrigation, indoor plants and the upkeep that keeps it all green through the summer.",
+        about:
+          "Green Dream has been shaping green spaces across Abu Dhabi since 2003. The team takes a project from first design through soft and hard landscaping, irrigation built for the Gulf summer, planting and turf, and then the regular upkeep that keeps it all alive. Indoor plants and an in-house nursery round things out. You'll find their work at public landmarks like Umm Al Emarat Park, as well as hospital campuses and school grounds around the emirate.",
         alt: "Landscaped park designed by Green Dream Agricultural",
       },
       {
         tag: "Waste Management",
         name: "Axon Waste Management",
-        desc: "Integrated waste collection, recycling and disposal — keeping facilities, sites and communities across the UAE clean, safe and compliant.",
+        desc: "Waste collection, recycling and safe disposal that keeps facilities and sites clean and compliant across the UAE.",
+        about:
+          "Axon Waste Management keeps facilities, sites and communities clean right across the UAE. The company handles waste from the moment it's generated to its final, compliant disposal: collection, segregation, recycling and safe removal for industrial clients, contractors and public venues alike. Dependable scheduling and proper paperwork matter as much as the trucks, so clients stay on the right side of local environmental rules without having to chase it.",
         alt: "Waste collection and recycling by Axon Waste Management",
       },
       {
         tag: "Integrated Services",
         name: "Axon Amenities",
-        desc: "Facility management, swimming pools and contracting under one roof — delivering Axon's specialist standard across Dubai and the wider UAE.",
+        desc: "Facility management, pools and contracting under one roof, bringing the group's services to Dubai and the wider UAE.",
+        about:
+          "Axon Amenities is the group's integrated-services arm for Dubai and the wider UAE. It brings facility management, swimming pools and contracting together under one agreement, so clients beyond Abu Dhabi get the same teams, standards and single point of contact the group is known for, without lining up several separate suppliers. If you're not sure which Axon company fits your project, this is usually the easiest place to start.",
         alt: "Axon Amenities servicing a high-rise tower in Dubai",
       },
       {
         tag: "Uniforms & Garments",
         name: "Axon Garments",
-        desc: "Tailored uniforms and workwear for hospitality, healthcare, security, schools and corporate teams — with in-house embroidery.",
+        desc: "Uniforms and workwear for hospitality, healthcare, security, schools and offices, tailored and embroidered in-house.",
+        about:
+          "Axon Garments has been outfitting UAE workforces since 1998, which makes it the longest-running company in the group. From hospitality and healthcare to security, schools, industrial sites and corporate offices, the team designs and tailors uniforms to suit both the job and the brand wearing them. Everything is finished in-house, embroidery and logo work included, which keeps quality consistent whether you're ordering a few pieces or kitting out an entire site.",
         alt: "Professional uniforms by Axon Garments",
       },
       {
         tag: "Swimming Pools",
         name: "Axon Swimming Pools",
-        desc: "Design, construction and maintenance of premium swimming pools — from concept and water treatment to leak detection.",
+        desc: "Design, construction and maintenance of swimming pools, from first concept and water treatment to leak detection and repair.",
+        about:
+          "Axon Swimming Pools designs, builds and looks after pools of every size, from private villa pools to large commercial and institutional installations. Established in 2013, the team covers the whole life of a pool: concept and construction, water treatment and filtration, renovation, leak detection and structural repair. They also handle work most pool companies don't, including the life-support systems behind the aquariums at Al Ain Zoo.",
         alt: "Swimming pool built by Axon Swimming Pools",
       },
       {
         tag: "Facility Management",
         name: "Axon Facility Management",
-        desc: "Integrated FM: MEP and HVAC, electrical and plumbing, cleaning, fire & safety and pest control.",
+        desc: "Full-service facility management: MEP and HVAC, electrical and plumbing, cleaning, fire and safety, and pest control.",
+        about:
+          "Axon Facility Management has kept buildings and sites running across Abu Dhabi and Dubai since 2009, and it's the broadest company in the group. The scope runs from MEP, HVAC, electrical and plumbing to cleaning and pest control, plus a full fire-and-safety division covering alarm and suppression systems, extinguisher servicing and staff training. Clients range from hotels and towers to government facilities, including long-running maintenance contracts at sites such as Qasr Al Sarab and Abu Dhabi's public slaughterhouses.",
         alt: "Commercial buildings serviced by Axon Facility Management",
       },
       {
         tag: "Construction & Contracting",
         name: "LSF Contracting",
-        desc: "Civil construction, steel structures, paving and turnkey contracting across the UAE — delivering quality builds since 2010.",
+        desc: "Civil construction, steel structures, paving and turnkey contracting across the UAE, building since 2010.",
+        about:
+          "LSF Contracting has worked in civil and steel construction since 2010. The company builds from the ground up — concrete and steel structures, paving and stonework, waterproofing, tiling, shading and car-park structures — and takes on the finishing trades many contractors leave to someone else. That breadth lets a client hand a project to a single team from foundation to handover, rather than coordinating a string of subcontractors.",
         alt: "Modern commercial building constructed by LSF Contracting",
       },
     ],
@@ -98,10 +112,11 @@ const en = {
     crumbCompanies: "Our Companies",
     back: "All companies",
     visit: "Visit website",
+    overviewEyebrow: "Overview",
     certsEyebrow: "Quality & compliance",
     certsTitle: "Certifications & licenses",
     certsLead:
-      "Accreditations and licenses held by the company. The slots below are reserved for the certificate scans you'll provide.",
+      "The accreditations and licences this company holds. Click any certificate to open the full document.",
     certs: [
       { label: "ISO 9001", note: "Quality Management" },
       { label: "ISO 45001", note: "Occupational Health & Safety" },
@@ -116,18 +131,18 @@ const en = {
   },
   why: {
     eyebrow: "Why choose us",
-    title: "The advantage of one trusted group.",
+    title: "What one group gets you.",
     features: [
-      { title: "End-to-end", desc: "Maintenance, construction, landscaping and supply — sourced and coordinated through a single partner." },
-      { title: "Quality & safety", desc: "ISO-certified processes and strict HSE standards on every site and contract." },
-      { title: "Local expertise", desc: "Built in Abu Dhabi, fluent in UAE regulations, suppliers and the local market." },
-      { title: "Trusted team", desc: "Experienced engineers and crews delivering for government and corporate clients." },
+      { title: "One supplier, not ten", desc: "Maintenance, building, grounds, pools, waste and uniforms, handled and coordinated by one group instead of a procurement headache." },
+      { title: "Safety you can audit", desc: "ISO-certified processes and HSE standards we actually hold to on every site and contract." },
+      { title: "Genuinely local", desc: "Based in Abu Dhabi since the late 1990s, fluent in UAE regulations, suppliers and the local market." },
+      { title: "People who've done it before", desc: "Experienced engineers, technicians and crews who already deliver for government and corporate clients." },
     ],
   },
   projects: {
     eyebrow: "Selected work",
     title: "Featured projects",
-    lead: "A selection of work delivered across the group — landscaping, facility management, swimming pools and more.",
+    lead: "A few projects we're proud of, from public parks and desert resorts to villa pools and government facilities. Each company's page has more.",
     titlePlaceholder: "Project title goes here",
     descPlaceholder: "One line on the client, scope and outcome.",
     cats: ["Facility Management", "Construction", "Landscaping"],
@@ -137,12 +152,12 @@ const en = {
     title: "Our clients & partners",
   },
   cta: {
-    title: "Let's build something together.",
-    text: "Tell us what you need — maintenance, construction, pools, landscaping or uniforms — and we'll point you to the right team in the group.",
+    title: "Not sure which company you need? Start here.",
+    text: "Tell us about the project, whether it's a maintenance contract, a build, a pool, landscaping, waste or uniforms, and we'll connect you with the right team. One message is enough — you don't need to work out our org chart first.",
     email: "Email us",
   },
   footer: {
-    tagline: "An Abu Dhabi–based group of specialized companies delivering integrated services across the UAE.",
+    tagline: "An Abu Dhabi group of seven companies, delivering integrated services across the UAE.",
     companiesTitle: "Companies",
     companyTitle: "Company",
     about: "About us",
@@ -150,6 +165,7 @@ const en = {
     careers: "Careers",
     contact: "Contact",
     getInTouch: "Get in touch",
+    hours: "Mon–Sat, closed Sundays",
     rights: "All rights reserved.",
     location: "Abu Dhabi, United Arab Emirates",
   },
@@ -170,7 +186,7 @@ const en = {
       { title: "Grow with us", desc: "Develop your career across a group of companies with real opportunities to advance." },
       { title: "Great teams", desc: "Work alongside experienced engineers, technicians and specialists who take pride in their craft." },
       { title: "Stability & safety", desc: "An established UAE group with ISO-certified processes and a strong commitment to HSE." },
-      { title: "Varied work", desc: "From construction to landscaping to software — no two days look the same across the group." },
+      { title: "Varied work", desc: "From construction sites to landscaping crews to the back office, no two days look quite the same." },
     ],
     openEyebrow: "Open positions",
     openTitle: "Current openings",
